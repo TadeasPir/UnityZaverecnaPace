@@ -47,7 +47,7 @@ public class HealthBarScriptEnemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(5);
         }
         Debug.Log("player health: " + currentHealth);
     }
