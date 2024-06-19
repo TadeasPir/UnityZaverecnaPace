@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class HealthBarScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HealthBarScript : MonoBehaviour
     private float lerpSpeed = 0.05f;
 
     [SerializeField] private int nextScene;
+    private Counter counter;
 
     public void Start()
     {
@@ -18,6 +20,7 @@ public class HealthBarScript : MonoBehaviour
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
         updateHealthBar(currentHealth, maxHealth);
+        counter = GameObject.FindGameObjectWithTag("Player").GetComponent<Counter>();
     }
 
     public void Update()
@@ -41,11 +44,14 @@ public class HealthBarScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
         currentHealth -= damage;
+
         if (currentHealth < 0) currentHealth = 0;
         healthBar.value = currentHealth;
         if (currentHealth <= 0)
         {
+            counter.addKilled();
             Destroy(gameObject);
         }
         Debug.Log("enemy health: "+currentHealth);
