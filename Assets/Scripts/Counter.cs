@@ -14,6 +14,7 @@ public class Counter : MonoBehaviour
     {
         if (killed == 10)
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(4);
         }
     }
