@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d3e1f023dbc19454aad0187ac69ca5e3
+  - enabled: 1
+    path: Assets/Scenes/Hospoda.unity
+    guid: 98adc48984e00634090a605bba276e40
+  - enabled: 1
+    path: Assets/Scenes/Udoli.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: bc2e2e2c8ae63384093d500bef62a77c
+  - enabled: 1
+    path: Assets/Scenes/Vyhral.unity
+    guid: cd2db958a95e3ce4abb56073140240ad
+  - enabled: 1
+    path: Assets/Scenes/Mrtev.unity
+    guid: 3d65ba58f25cb9f43b2493fffe085a97
   m_configObjects: {}

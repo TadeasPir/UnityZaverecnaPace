@@ -15,4 +15,23 @@ public class MenuSetting : MonoBehaviour
         Debug.LogWarning("Quit");
         Application.Quit();
     }
+    public void Win()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void Dead()
+    {
+        SceneManager.LoadScene(5);
+    }
+    public void ToBegining()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
 }
