@@ -46,6 +46,7 @@ public class HealthBarScriptEnemy : MonoBehaviour
         healthBar.value = currentHealth;
         if (currentHealth <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
             Destroy(gameObject);
             SceneManager.LoadScene(5);
         }
@@ -53,6 +54,8 @@ public class HealthBarScriptEnemy : MonoBehaviour
     }
     public void Die()
     {
+        
         Destroy(gameObject);
+    
     }
 }
