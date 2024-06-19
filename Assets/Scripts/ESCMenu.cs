@@ -13,17 +13,13 @@ public class ESCMenu : MonoBehaviour
     
     void Update()
     {
-        if (isOpen == false && Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape) && isOpen == false )
         {
-            menu.SetActive(true);
-            isOpen = true;
-            Time.timeScale = 0f;
+            Pause();
         }
         if (isOpen == true && Input.GetKeyDown(KeyCode.Escape))
         {
-            menu.SetActive(false);
-            isOpen = false;
-            Time.timeScale = 1.0f;
+            Resume();
         }
     }
 
@@ -32,6 +28,16 @@ public class ESCMenu : MonoBehaviour
             menu.SetActive(false);
             isOpen = false;
             Time.timeScale = 1.0f;
-        
+            Cursor.lockState = CursorLockMode.Locked;
+
+    }
+    public void Pause() 
+    {
+
+
+        menu.SetActive(true);
+        isOpen = true;
+        Time.timeScale = 0.0f;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
