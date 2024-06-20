@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class HealthBarScriptEnemy : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class HealthBarScriptEnemy : MonoBehaviour
         {
             EaseHealthBar.value = Mathf.Lerp(EaseHealthBar.value, currentHealth, lerpSpeed);
         }
+        if (UnityEngine.Input.GetKeyDown(KeyCode.L))
+        {
+        Heal();
+        
+        }
     }
 
     public void updateHealthBar(float currentValue, float maxValue)
@@ -51,6 +57,15 @@ public class HealthBarScriptEnemy : MonoBehaviour
             SceneManager.LoadScene(5);
         }
         Debug.Log("player health: " + currentHealth);
+    }
+
+    public void Heal() 
+    {
+
+        currentHealth += 10;
+        
+        Debug.Log("player health: " + currentHealth);
+
     }
     public void Die()
     {

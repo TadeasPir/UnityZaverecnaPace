@@ -16,7 +16,7 @@ public class ESCMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen == false )
         {
             Pause();
-        }
+        }else
         if (isOpen == true && Input.GetKeyDown(KeyCode.Escape))
         {
             Resume();
@@ -25,19 +25,20 @@ public class ESCMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
             menu.SetActive(false);
             isOpen = false;
             Time.timeScale = 1.0f;
-            Cursor.lockState = CursorLockMode.Locked;
+           
 
     }
-    public void Pause() 
+    public void Pause()
     {
-
+        Cursor.lockState = CursorLockMode.None;
 
         menu.SetActive(true);
         isOpen = true;
         Time.timeScale = 0.0f;
-        Cursor.lockState = CursorLockMode.None;
+       
     }
 }
